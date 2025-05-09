@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trash Disposal Monitoring </title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- 🌗 Theme Toggle -->
+  <button class="theme-toggle" onclick="toggleTheme()">🌓 Theme</button>
+
+  <div class="dashboard-container">
+    <header>
+      <h1>♻️ Trash Disposal Monitoring System</h1>
+      <p class="sub-text">Bin Levels, Just a Click Away 🗑️</p>
+<nav>
+        <a href="log.html" class="nav-link">View Log</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="card bin-card">
+        <h2>Trash Fill Status</h2>
+        <div class="bin-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/5025/5025562.png" alt="Trash Icon" class="icon" />
+        </div>
+        <div class="bin">
+          <div class="fill" id="fill"></div>
+        </div>
+        <div id="trash-text" class="level-text">Trash Level: 0%</div>
+
+        <!-- Alert -->
+        <div class="alert-box" id="alert-box" style="display: none;">
+          <h3>⚠️ Alert</h3>
+          <p>Trash bin is almost full! Please empty it soon.</p>
+        </div>
+
+        <!-- Clean Buttons -->
+        <div id="clean-controls" class="clean-controls" style="display: none;">
+          <button id="start-clean" class="btn clean">🧹 Clean In Progress</button>
+          <button id="done-clean" class="btn done" style="display: none;">✅ Clean Finished</button>
+        </div>
+      </div>
+
+      <!-- Map Card -->
+      <div class="card map-card">
+        <h2>Trash Bin Location</h2>
+        <div id="map"></div>
+        <p>This is the current location📍 of your Trash bin🗑️</p> 
+      </div>
+    </main>
+  </div>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+
+  <!-- Theme Toggle -->
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+
+  <!-- Google Maps -->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1k1T0ZODJE-F0p_vkSliHp1KTdKa4f4s&callback=initMap&libraries=marker">
+  </script>
+
+</body>
+</html>

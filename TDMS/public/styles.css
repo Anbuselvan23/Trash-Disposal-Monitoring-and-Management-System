@@ -1,0 +1,430 @@
+:root {
+  --primary-bg: #d7e8f7;
+  --secondary-bg: #ffffffcc;
+  --text-color: #0d47a1;
+  --card-bg: #ffffffcc;
+  --bin-border: #64b5f6;
+  --bin-fill: linear-gradient(to top, #2196f3, #64b5f6);
+  --alert-bg: #ef5350;
+  --btn-clean: #ffca28;
+  --btn-done: #43a047;
+}
+
+body.dark-mode {
+  --primary-bg: #121212;
+  --secondary-bg: #1e1e2f;
+  --text-color: #e3f2fd;
+  --card-bg: #2b2b3c;
+  --bin-border: #90caf9;
+  --bin-fill: linear-gradient(to top, #1976d2, #42a5f5);
+  --alert-bg: #e53935;
+  --btn-clean: #fdd835;
+  --btn-done: #66bb6a;
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--primary-bg);
+  color: var(--text-color);
+  transition: background 0.5s, color 0.5s ease;
+}
+
+/* Container */
+.dashboard-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 20px;
+  background: var(--secondary-bg);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border: 2px solid var(--bin-border);
+  animation: slideInFromTop 1s ease-out;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.sub-text {
+  font-size: 1rem;
+}
+
+/* Mode Toggle */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  padding: 10px 16px;
+  background: var(--btn-clean);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  opacity: 0.85;
+  transform: scale(1.1);
+  background-color: #ffeb3b;
+}
+
+/* Main Layout */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 30px;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Card Styling */
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 25px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Bin Card */
+.bin-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  width: 60px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+/* Bin Container */
+.bin {
+  width: 110px;
+  height: 220px;
+  background-color: var(--card-bg);
+  border: 3px solid var(--bin-border);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(100, 181, 246, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.bin:hover {
+  transform: scale(1.05);
+}
+
+/* .fill class */
+.fill {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  background-color: #4caf50;
+  transition: height 1s ease, background-color 1s ease;
+}
+
+/* Trash Level Text */
+#trash-text {
+  margin-top: 16px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+/* Alert Box */
+.alert {
+  display: none;
+  background-color: var(--alert-bg);
+  color: white;
+  padding: 14px 20px;
+  margin-top: 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInFromTop {
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn.clean {
+  background-color: var(--btn-clean);
+  color: #000;
+}
+
+.btn.clean:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn.done {
+  background-color: var(--btn-done);
+  color: #fff;
+}
+
+.btn.done:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Map Card */
+.map-card #map {
+  width: 100%;
+  height: 280px;
+  margin-top: 15px;
+  border-radius: 14px;
+  border: 2px solid var(--bin-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.map-card #map:hover {
+  transform: scale(1.05);
+}
+
+#clean-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .bin {
+    width: 80px;
+    height: 160px;
+  }
+
+  .icon {
+    width: 50px;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
+
+/* Clean Bin Button */
+.clean-btn {
+  background-color: #4caf50;
+  color: white;
+  font-size: 18px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s ease;
+  margin-top: 20px;
+}
+
+.clean-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.clean-btn:active {
+  background-color: #388e3c;
+  transform: scale(1);
+}
+
+/* Done Button */
+.done-btn {
+  background-color: #2196f3;
+  color: white;
+  font-size: 18px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s ease;
+  margin-top: 20px;
+}
+
+.done-btn:hover {
+  background-color: #1e88e5;
+  transform: scale(1.05);
+}
+
+.done-btn:active {
+  background-color: #1976d2;
+  transform: scale(1);
+}
+
+/* Clean in Progress Box */
+#alert-box.cleaning {
+  background-color: #ff5722;
+  padding: 20px;
+  color: white;
+  font-size: 20px;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#alert-box.cleaning::before {
+  content: "🧼";
+  font-size: 28px;
+  margin-right: 8px;
+}
+
+/* Clean Finished Box */
+#alert-box.finished {
+  background-color: #43a047;
+  padding: 20px;
+  color: white;
+  font-size: 20px;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+
+/* Log Table */
+.log-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: var(--card-bg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.log-table th,
+.log-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
+}
+
+.log-table th {
+  background-color: var(--bin-border);
+  color: #fff;
+  font-weight: bold;
+}
+
+.log-table tr:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+.delete-btn:active {
+  transform: scale(0.98);
+}
+
+.delete-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.4);
+}
+.nav-link {
+  display: inline-block;
+  background-color: #3498db; /* Blue background */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none; /* Remove underline */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
+
+.nav-link:active {
+  transform: scale(0.98); /* Slight shrink effect when clicked */
+}
+
+.nav-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5); /* Light blue outline */
+}
+
+/* Responsive Table */
+@media screen and (max-width: 768px) {
+  .log-table th, .log-table td {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
