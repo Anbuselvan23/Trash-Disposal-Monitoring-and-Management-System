@@ -1,0 +1,97 @@
+/* Eco-friendly green dashboard theme */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.dashboard {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 36px;
+  color: #1b5e20;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 30px;
+  margin: 0 auto 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.2);
+  max-width: 320px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.bin {
+  width: 100px;
+  height: 200px;
+  margin: 0 auto;
+  border: 3px solid #2e7d32;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  background-color: #c8e6c9;
+}
+
+.fill {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #388e3c;
+  height: 0%;
+  transition: height 0.6s ease-in-out;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+#trash-text {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #1b5e20;
+}
+
+#alert-box {
+  display: none;
+  background-color: #e53935;
+  color: white;
+  padding: 15px;
+  border-radius: 15px;
+  font-weight: bold;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 5px 15px rgba(229, 57, 53, 0.3);
+  animation: pulse 1s infinite alternate;
+}
+
+#map {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(46, 125, 50, 0.2);
+}
+
+/* Alert Pulse Animation */
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(229, 57, 53, 0.3);
+  }
+  to {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(229, 57, 53, 0.6);
+  }
+}

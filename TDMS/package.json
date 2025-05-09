@@ -1,0 +1,20 @@
+{
+  "name": "trash-monitoring-system",
+  "version": "1.0.0",
+  "description": "Trash Disposal Monitoring System using Node.js and Firebase",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "firebase-admin": "^11.11.1",
+    "serialport": "^11.0.1",
+    "twilio": "^4.23.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
