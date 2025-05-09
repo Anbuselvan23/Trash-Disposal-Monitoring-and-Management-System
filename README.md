@@ -20,3 +20,4 @@ I have experience in the following technologies:
 - **PHP:** Server-side scripting for dynamic web applications.
 - **MySQL:** Database management and interaction.
 - **JavaScript:** Adding interactivity and functionality to web pages.
+- **Node.js:**  for server side data transmisson 
